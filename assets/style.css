@@ -100,11 +100,11 @@ main {
 
 .row {
   display: flex;
-  flex-direction: row;
   padding: 1.5rem;
   flex-wrap: wrap;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
+  width: 100%;
 }
 
 .justify-content {
@@ -144,11 +144,14 @@ main {
 }
 
 .card:hover,
-.card_heading {
-  box-shadow: inset(0 0 8px var(--heliotrope)), 0 0 15px var(--heliotrope);
+.card:hover .card_heading {
+  box-shadow: inset 0px 0px 8px var(--heliotrope),
+    0px 0px 15px var(--heliotrope);
 }
 
-.code_block {
+/*  with this flex property the pre elements will grow to have the same width and height */
+
+.code-block {
   flex-grow: 1;
 }
 
@@ -186,7 +189,7 @@ main {
   }
 
   /* select the last child to grow to full width if it has space to grow */
-  .card-column:last-child {
+  .card_column:last-child {
     flex-grow: 1;
   }
 }
@@ -197,7 +200,7 @@ main {
     width: 75%;
   }
 
-  .card-column {
+  .card_column {
     flex: 0 0 33.333%;
     max-width: 33.333%;
   }
